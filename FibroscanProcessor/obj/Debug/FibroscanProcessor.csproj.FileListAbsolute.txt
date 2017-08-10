@@ -1,0 +1,6 @@
+D:\rep\sneddy-client\bin\FibroscanProcessor.dll.config
+D:\rep\sneddy-client\bin\FibroscanProcessor.dll
+D:\rep\sneddy-client\bin\FibroscanProcessor.pdb
+D:\rep\sneddy-client\FibroscanProcessor\obj\Debug\FibroscanProcessor.csprojResolveAssemblyReference.cache
+D:\rep\sneddy-client\FibroscanProcessor\obj\Debug\FibroscanProcessor.dll
+D:\rep\sneddy-client\FibroscanProcessor\obj\Debug\FibroscanProcessor.pdb

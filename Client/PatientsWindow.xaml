@@ -1,0 +1,74 @@
+﻿<Window x:Class="Client.PatientsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        xmlns:m="clr-namespace:Model"
+        mc:Ignorable="d"
+        Title="Balder" Height="768" Width="1024" Loaded="Window_Loaded" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" MinWidth="1024" WindowState="Maximized">
+    <Window.Resources>
+        <local:StatusBackgroundConverter x:Key="StatusBackgroundConverter" />
+        <local:StatusTextConverter x:Key="StatusTextConverter" />
+    </Window.Resources>
+    <Grid Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="89*"/>
+            <ColumnDefinition Width="38*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="nameFilter" TextChanged="nameFilter_TextChanged" HorizontalAlignment="Left" Height="26" Margin="260,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <Button x:Name="clearNameFilterButton" Click="clearNameFilterButton_Click" Content="Очистить" HorizontalAlignment="Left" Margin="615,10,0,0" VerticalAlignment="Top" Width="74" Height="26" IsEnabled="False"/>
+        <local:BDatePicker x:Name="fromDateFilter" SelectedDateChanged="dateFilter_SelectedDateChanged" HorizontalAlignment="Left" Margin="292,41,0,0" VerticalAlignment="Top" Width="130" Height="26" FirstDayOfWeek="Monday" IsEnabled="False" />
+        <local:BDatePicker x:Name="toDateFilter" SelectedDateChanged="dateFilter_SelectedDateChanged" HorizontalAlignment="Left" Margin="480,41,0,0" VerticalAlignment="Top" Width="130" Height="26" FirstDayOfWeek="Monday" IsEnabled="False"/>
+        <Button x:Name="clearDateFilterButton" Click="clearDateFilterButton_Click" Content="Очистить" HorizontalAlignment="Left" Margin="615,41,0,0" VerticalAlignment="Top" Width="74" Height="26" IsEnabled="False"/>
+        <Canvas HorizontalAlignment="Right" Height="56" Margin="0,10,2,0" VerticalAlignment="Top" Width="300" Grid.Column="1">
+            <Button x:Name="newPatientBtn" Content="Новый пациент" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="105" Height="56" Click="newPatientBtn_Click"/>
+            <Button x:Name="syncBtn" Content="Синхронизация" HorizontalAlignment="Center" Width="103" VerticalAlignment="Top" Height="56" Canvas.Left="107" IsEnabled="False"/>
+            <Button x:Name="logoutBtn" Content="Выход" HorizontalAlignment="Center" VerticalAlignment="Top" Width="88" Height="56" Canvas.Left="212" Click="logoutBtn_Click"/>
+        </Canvas>
+        <DataGrid x:Name="patientsGrid" Loaded="patientsGrid_Loaded" Margin="0,70,0,0" AutoGenerateColumns="False" HorizontalAlignment="Stretch" HorizontalGridLinesBrush="Gray" VerticalGridLinesBrush="Gray" RowHeight="25" IsReadOnly="True" Grid.ColumnSpan="2">
+            <DataGrid.DataContext>
+                <m:TablePatient/>
+            </DataGrid.DataContext>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" FontWeight="Bold" Header="#" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Ф. И. О." MinWidth="200" Width="*"/>
+                <DataGridTextColumn Binding="{Binding PhibrosisStage}" Header="Стадия фиброза" CanUserResize="False" Width="100"/>
+                <DataGridTextColumn Binding="{Binding LastExamineDate}" Header="Последнее сканирование"  Width="155"/>
+                <DataGridTextColumn Header="Проверка системой" Width="140">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Background" Value="{Binding LocalStatus, Converter={StaticResource StatusBackgroundConverter}}"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="Text" Value="{Binding LocalStatus, Converter={StaticResource StatusTextConverter}}"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Проверка экспертом" Width="140">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Background" Value="{Binding ExpertStatus, Converter={StaticResource StatusBackgroundConverter}}"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="Text" Value="{Binding ExpertStatus, Converter={StaticResource StatusTextConverter}}"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn Width="120">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="ShowPatientExamines">Просмотр</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            <DataGrid.BindingGroup>
+                <BindingGroup/>
+            </DataGrid.BindingGroup>
+        </DataGrid>
+        <Label x:Name="label" Content="Поиск по Ф.И.О.:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.269" Height="26" Width="102"/>
+        <Label x:Name="label_Copy" Content="Поиск по дате последнего сканирования:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.269" Height="26" Width="239"/>
+        <Label x:Name="label_Copy1" Content="От:" HorizontalAlignment="Left" Margin="260,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.269" Height="26" Width="27"/>
+        <Label x:Name="label_Copy2" Content="До:" HorizontalAlignment="Left" Margin="447,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.184,0.269" Height="26" Width="28"/>
+
+    </Grid>
+</Window>

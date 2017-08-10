@@ -1,0 +1,13 @@
+D:\rep\sneddy-client\Client\bin\Debug\Client.exe.config
+D:\rep\sneddy-client\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+D:\rep\sneddy-client\Client\obj\Debug\ExaminesWindow.g.cs
+D:\rep\sneddy-client\Client\obj\Debug\ExamineWindow.g.cs
+D:\rep\sneddy-client\Client\obj\Debug\LoaderWindow.g.cs
+D:\rep\sneddy-client\Client\obj\Debug\ViewImageWindow.g.cs
+D:\rep\sneddy-client\Client\obj\Debug\PatientsWindow.g.cs
+D:\rep\sneddy-client\Client\obj\Debug\MeasurePreview.g.cs
+D:\rep\sneddy-client\Client\obj\Debug\NewPatientWindow.g.cs
+D:\rep\sneddy-client\Client\obj\Debug\App.g.cs
+D:\rep\sneddy-client\Client\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\rep\sneddy-client\Client\obj\Debug\Client_MarkupCompile.cache
+D:\rep\sneddy-client\Client\obj\Debug\Client_MarkupCompile.lref

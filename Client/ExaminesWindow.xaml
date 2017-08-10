@@ -1,0 +1,62 @@
+﻿<Window x:Class="Client.ExaminesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        xmlns:m="clr-namespace:Model"
+        mc:Ignorable="d"
+        Title="Обследования пациента" Height="800" Width="1000" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" WindowState="Maximized" Closed="Window_Closed">
+    <Window.Resources>
+        <local:StatusBackgroundConverter x:Key="StatusBackgroundConverter" />
+        <local:StatusTextConverter x:Key="StatusTextConverter" />
+    </Window.Resources>
+    <Grid>
+        <DataGrid x:Name="examinesGrid" Margin="0,70,0,0" AutoGenerateColumns="False" HorizontalAlignment="Stretch" HorizontalGridLinesBrush="Gray" VerticalGridLinesBrush="Gray" RowHeight="25" IsReadOnly="True">
+            <DataGrid.DataContext>
+                <m:TableExamine/>
+            </DataGrid.DataContext>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" FontWeight="Bold" Header="#" Width="50"/>
+                <DataGridTextColumn Binding="{Binding MeasuresCount}" Header="Кол-во сканирований" MinWidth="135" Width="*"/>
+                <DataGridTextColumn Binding="{Binding IQRMed}" Header="IQR/MED" MinWidth="80" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Med}" Header="MED" MinWidth="80" Width="*"/>
+                <DataGridTextColumn Binding="{Binding PhibrosisStage}" Header="Стадия фиброза" Width="100"/>
+                <DataGridTextColumn Binding="{Binding CreatedAt}" Header="Дата" MinWidth="130" Width="*"/>
+                <DataGridTextColumn Header="Проверка системой" Width="140">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Background" Value="{Binding LocalStatus, Converter={StaticResource StatusBackgroundConverter}}"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="Text" Value="{Binding LocalStatus, Converter={StaticResource StatusTextConverter}}"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Проверка экспертом" Width="140">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Background" Value="{Binding ExpertStatus, Converter={StaticResource StatusBackgroundConverter}}"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="Text" Value="{Binding ExpertStatus, Converter={StaticResource StatusTextConverter}}"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn Width="120" Header="Просмотр">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="ShowExamine" Content="Просмотр"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            <DataGrid.BindingGroup>
+                <BindingGroup/>
+            </DataGrid.BindingGroup>
+        </DataGrid>
+        <Button x:Name="backBtn" Content="Назад" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="126" Height="44" Click="backBtn_Click"/>
+        <Label x:Name="nameLabel" Content="Фамилия Имя Отчество" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="30"/>
+        <Button x:Name="newMeasureBtn" Content="Новое исследование" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="156" Height="44" Click="newMeasureBtn_Click" IsEnabled="False"/>
+        <Button x:Name="importFbixBtn" Content="Импорт из FBIX" HorizontalAlignment="Right" Margin="0,10,170,0" VerticalAlignment="Top" Width="121" Height="44" Click="importFbixBtn_Click"/>
+
+    </Grid>
+</Window>

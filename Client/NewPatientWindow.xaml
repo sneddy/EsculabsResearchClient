@@ -1,0 +1,35 @@
+﻿<Window x:Class="Client.NewPatientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="Новый пациент" Height="609.1" Width="738" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ShowActivated="True" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="265"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Center" Height="500" Margin="65,39" VerticalAlignment="Center" Width="600" Grid.ColumnSpan="2">
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="22,202,0,0" TextWrapping="Wrap" Text="Периметр грудной клетки (TP)" VerticalAlignment="Top" Height="25" Width="176"/>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="22,240,0,0" TextWrapping="Wrap" Text="Расстояние между кожей и капсулой (SCD)" VerticalAlignment="Top" RenderTransformOrigin="2.286,-1.125" Height="33" Width="176"/>
+            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="22,42,0,0" TextWrapping="Wrap" Text="ИИН" VerticalAlignment="Top" Height="25" Width="176"/>
+            <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="22,82,0,0" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Top" Height="25" Width="176"/>
+            <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="22,120,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Height="25" Width="176"/>
+            <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="22,161,0,0" TextWrapping="Wrap" Text="Отчество" VerticalAlignment="Top" Height="25" Width="176"/>
+            <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left" Margin="22,320,0,0" TextWrapping="Wrap" Text="Пол" VerticalAlignment="Top" Height="25" Width="176"/>
+            <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Left" Margin="22,281,0,0" TextWrapping="Wrap" Text="Дата рождения" VerticalAlignment="Top" Height="25" Width="176"/>
+            <Button x:Name="startExamineBtn" Content="Начать обследование" HorizontalAlignment="Center" Margin="0,0,0,40" VerticalAlignment="Bottom" Width="201" Height="50" Click="startExamineBtn_Click"/>
+            <TextBox x:Name="iinTextBox" HorizontalAlignment="Left" Height="25" Margin="224,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" TextChanged="iinTextBox_TextChanged"/>
+            <TextBox x:Name="lastNameTextBox" HorizontalAlignment="Left" Height="25" Margin="224,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366"/>
+            <TextBox x:Name="firstNameTextBox" HorizontalAlignment="Left" Height="25" Margin="224,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366"/>
+            <TextBox x:Name="middleNameTextBox" HorizontalAlignment="Left" Height="25" Margin="224,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366"/>
+            <TextBox x:Name="tpTextBox" HorizontalAlignment="Left" Height="25" Margin="224,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366"/>
+            <TextBox x:Name="scdTextBox" HorizontalAlignment="Left" Height="25" Margin="224,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366"/>
+            <RadioButton x:Name="maleRadioButton" Content="мужской" HorizontalAlignment="Left" Margin="224,317,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="femaleRadioButton" Content="женский" HorizontalAlignment="Left" Margin="404,317,0,0" VerticalAlignment="Top"/>
+            <local:BDatePicker x:Name="birthdateDatePicker" HorizontalAlignment="Left" Margin="224,277,0,0" VerticalAlignment="Top" Width="366"/>
+        </Grid>
+    </Grid>
+</Window>

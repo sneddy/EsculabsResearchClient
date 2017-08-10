@@ -1,0 +1,21 @@
+﻿<Window x:Class="Client.LoaderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="LoaderWindow" 
+        Height="260.0" 
+        Width="482" 
+        ResizeMode="NoResize" 
+        AllowsTransparency="False" 
+        ShowInTaskbar="False" 
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None" 
+        BorderBrush="Black"
+        BorderThickness="1" Loaded="Window_Loaded">
+    <Grid>
+        <Label x:Name="label" Content="Пожаdлуйста, подождите..." HorizontalAlignment="Left" Margin="111,0,0,0" VerticalAlignment="Center" FontSize="21.333"/>
+    </Grid>
+</Window>

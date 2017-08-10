@@ -1,0 +1,10 @@
+D:\rep\sneddy-client\bin\ImageLoader.exe.config
+D:\rep\sneddy-client\bin\ImageLoader.exe
+D:\rep\sneddy-client\bin\ImageLoader.pdb
+D:\rep\sneddy-client\ImageLoader\obj\Debug\ImageLoader.csprojResolveAssemblyReference.cache
+D:\rep\sneddy-client\ImageLoader\obj\Debug\ImageLoader.BigImage.resources
+D:\rep\sneddy-client\ImageLoader\obj\Debug\ImageLoader.Form1.resources
+D:\rep\sneddy-client\ImageLoader\obj\Debug\ImageLoader.Properties.Resources.resources
+D:\rep\sneddy-client\ImageLoader\obj\Debug\ImageLoader.csproj.GenerateResource.Cache
+D:\rep\sneddy-client\ImageLoader\obj\Debug\ImageLoader.exe
+D:\rep\sneddy-client\ImageLoader\obj\Debug\ImageLoader.pdb

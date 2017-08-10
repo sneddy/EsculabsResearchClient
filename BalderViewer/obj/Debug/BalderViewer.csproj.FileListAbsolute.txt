@@ -1,0 +1,10 @@
+D:\rep\sneddy-client\bin\BalderViewer.exe.config
+D:\rep\sneddy-client\bin\BalderViewer.exe
+D:\rep\sneddy-client\bin\BalderViewer.pdb
+D:\rep\sneddy-client\BalderViewer\obj\Debug\BalderViewer.csprojResolveAssemblyReference.cache
+D:\rep\sneddy-client\BalderViewer\obj\Debug\BalderViewer.BigImage.resources
+D:\rep\sneddy-client\BalderViewer\obj\Debug\BalderViewer.Form1.resources
+D:\rep\sneddy-client\BalderViewer\obj\Debug\BalderViewer.Properties.Resources.resources
+D:\rep\sneddy-client\BalderViewer\obj\Debug\BalderViewer.csproj.GenerateResource.Cache
+D:\rep\sneddy-client\BalderViewer\obj\Debug\BalderViewer.exe
+D:\rep\sneddy-client\BalderViewer\obj\Debug\BalderViewer.pdb
